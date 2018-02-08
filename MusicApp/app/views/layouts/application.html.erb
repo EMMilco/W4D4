@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MusicApp</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+    <header>
+
+      <% if flash[:errors] %>
+      <ul>
+        <% flash[:errors].each do |err| %>
+          <li><%= err %></li>
+        <% end %>
+      </ul>
+      <% end %>
+      <nav>
+
+        <h2>THIS IS MUSIC APP</h2>
+
+        <p>
+      <% if current_user %>
+        YOU ARE: <%= current_user.email.upcase %>.
+          <form action="<%= session_url %>" method="post">
+            <input type="hidden" name="_method" value="delete">
+            <%= form_token %>
+            <input type="submit" name="" value="LOG OUT">
+          </form>
+        </p>
+      <% else %>
+        <p><a href="<%= new_session_url %>">CLICK TO LOG IN</a></p>
+      <% end %>
+    </nav>
+    </header>
+    <%= yield %>
+  </body>
+</html>

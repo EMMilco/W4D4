@@ -1,0 +1,15 @@
+
+<form class="login_form" action="<%= session_url %>" method="post">
+  <h1>Please Enter Your Login Credentials Below</h1>
+  <%= form_token %>
+  <label>Email Address
+    <input type="text" name="login[email]" value="">
+  </label>
+
+  <label>Password
+    <input type="password" name="login[password]" value="">
+  </label>
+
+  <input type="submit" name="" value="Login">
+
+</form>
