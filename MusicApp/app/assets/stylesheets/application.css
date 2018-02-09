@@ -45,7 +45,27 @@
    margin-bottom: 20px;
  }
 
+main {
+  padding: 100px;
+}
 
+main h2 {
+  font-size: 48px;
+}
+
+main ul {
+  width: 80%
+}
+
+main ul li {
+  display: block
+}
+
+main p a {
+  font-weight: bold;
+  text-decoration: none;
+  color: red;
+}
 
  nav h2 {
    font-family: Futura PT;
@@ -54,6 +74,11 @@
    letter-spacing: 15px;
    font-size: 42px;
    margin: 20px;
+ }
+
+ nav a {
+   text-decoration: none;
+   color: inherit
  }
 
  nav p {
@@ -81,6 +106,7 @@
    background: yellow;
    border: none;
    color: red;
+   padding: 5px 10px;
  }
 
 .login_form [type="submit"] {
@@ -111,4 +137,8 @@
  .login_form h1 {
    margin-bottom: 40px;
    color: red;
+ }
+
+ li, p {
+   padding: 10px;
  }

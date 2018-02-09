@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :ensure_logged_in, except: [:new, :create]
 
   def new
     render :new
@@ -13,6 +14,10 @@ class UsersController < ApplicationController
       flash[:errors] = ["email and/or password invalid, please choose again"]
       redirect_to new_user_url
     end
+  end
+
+  def show
+    render :show
   end
 
 

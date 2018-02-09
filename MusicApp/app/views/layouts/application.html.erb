@@ -20,7 +20,7 @@
       <% end %>
       <nav>
 
-        <h2>THIS IS MUSIC APP</h2>
+        <h2><a href="<%= root_url %>">THIS IS MUSIC APP</a></h2>
 
         <p>
       <% if current_user %>
@@ -36,6 +36,8 @@
       <% end %>
     </nav>
     </header>
+    <main>
     <%= yield %>
+  </main>
   </body>
 </html>

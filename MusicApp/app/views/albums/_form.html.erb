@@ -1,0 +1,31 @@
+<%= form_token %>
+<label>Title
+  <input type="text" name="album[title]" value="<%= album.title %>">
+</label>
+
+<label>Band Name
+  <select name="album[band_id]">
+      <option value="" disabled >Choose a band</option>
+    <% Band.all.each do |band| %>
+      <option value="<%= band.id %>" <%=band.id == album.band_id ? 'selected' : '' %> >
+        <%= band.name %>
+      </option>
+    <% end %>
+  </select>
+</label>
+
+<label>Year
+  <input type="number" name="album[year]" value="<%= album.year %>">
+</label>
+
+<label>Studio
+  <input type="radio" id="live_or_studio" name="album[studio]" value="true" <%= album.studio ? h('checked') : ''%>>
+</label>
+
+<label>Live
+  <input type="radio" id="live_or_studio" name="album[studio]" value="false" <%= album.studio ? '' : h('checked')%>>
+</label>
+
+<input type="submit" name="" value="Submit">
+
+</form>

@@ -1,0 +1,36 @@
+<!-- TRACK CREATION/UPDATE FORM PARTIAL -->
+
+<%= form_token %>
+<label>Title
+  <input type="text" name="track[title]" value="<%= track.title %>">
+</label>
+
+<label>Album Name
+  <select name="track[album_id]">
+      <option value="" disabled >Choose an album</option>
+    <% Album.all.each do |album| %>
+    <option value="<%= album.id %>" <%=album.id == track.album_id ? 'selected' : '' %> >
+      <%= album.title %>
+    </option>
+    <% end %>
+  </select>
+</label>
+
+
+<label>Bonus Track?
+  <input type="checkbox" id="bonus_or_not" name="track[bonus]" value="true" <%= track.bonus ? h('checked') : ''%>>
+</label>
+
+<label>Track Number
+  <input type="number" name="track[number]" value="<%= track.ord %>">
+</label>
+
+
+<label>Lyrics</label>
+<textarea name="track[lyrics]" rows="8" cols="50"><%= track.lyrics %></textarea>
+
+
+
+<input type="submit" name="" value="Submit">
+
+</form>

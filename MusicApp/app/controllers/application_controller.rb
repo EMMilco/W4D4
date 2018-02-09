@@ -14,4 +14,10 @@ class ApplicationController < ActionController::Base
   def logged_in?
     !!current_user
   end
+
+  def ensure_logged_in
+    unless logged_in?
+      redirect_to root_url
+    end
+  end
 end

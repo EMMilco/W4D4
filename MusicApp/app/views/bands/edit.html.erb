@@ -1,0 +1,5 @@
+<form class="login_form" action="<%= band_url(@band) %>" method="post">
+  <h1>Add a Band</h1>
+  <input type="hidden" name="_method" value="patch">
+
+  <%= render "form", album: @album %>
